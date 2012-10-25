@@ -52,21 +52,24 @@
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.mokai</groupId>
 			<artifactId>mokai-http</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.mokai</groupId>
 			<artifactId>mokai-smpp</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.mokai</groupId>
+			<artifactId>mokai-smpp-server</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.mokai</groupId>
 			<artifactId>mokai-mail</artifactId>
