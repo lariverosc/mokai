@@ -214,7 +214,7 @@ public abstract class AbstractSmsHandler implements MessageHandler {
 			stmt.setTimestamp(9, null);
 		}
 			
-		stmt.setLong(10, message.getId());
+		stmt.setLong(10, (Long) message.getId());
 		
 		int affected = stmt.executeUpdate();
 		
@@ -324,6 +324,12 @@ public abstract class AbstractSmsHandler implements MessageHandler {
 			// add additional properties
 			for (Map.Entry<String,Object> entry : criteria.getProperties().entrySet()) {
 				strSQL.append(addOperator(existsCriteria));
+				
+				// map known values -- this is a hack while we deprecate the relational databases
+				String key = entry.getKey();
+				if ("to".equals(key)) {
+					key = "smsc_to";
+				}
 				
 				strSQL.append(" " + entry.getKey() + " = ?");
 				params.add(entry.getValue());
